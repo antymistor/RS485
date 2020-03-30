@@ -336,7 +336,7 @@
               <MiscControls></MiscControls>
               <Define>STM32F410xx,USE_STDPERIPH_DRIVER,ARM_MATH_CM4,__CC_ARM,ARM_MATH_MATRIX_CHECK,ARM_MATH_ROUNDING</Define>
               <Undefine></Undefine>
-              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\FWLIB\inc;..\DSP_LIB;..\DSP_LIB\Include;..\FreeRTOS\include;..\FreeRTOS\portable\RVDS\ARM_CM4F;..\HARDWARE\RS485;..\HARDWARE;..\HARDWARE\D8X3;..\HARDWARE\MODBUS;..\HARDWARE\GILL</IncludePath>
+              <IncludePath>..\CORE;..\SYSTEM\delay;..\SYSTEM\sys;..\SYSTEM\usart;..\USER;..\FWLIB\inc;..\DSP_LIB;..\DSP_LIB\Include;..\FreeRTOS\include;..\FreeRTOS\portable\RVDS\ARM_CM4F;..\HARDWARE\RS485;..\HARDWARE;..\HARDWARE\D8X3;..\HARDWARE\MODBUS;..\HARDWARE\GILL;..\HARDWARE\SEMCTR</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -419,6 +419,11 @@
               <FileName>GILL.c</FileName>
               <FileType>1</FileType>
               <FilePath>..\HARDWARE\GILL\GILL.c</FilePath>
+            </File>
+            <File>
+              <FileName>SEMCTR.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>..\HARDWARE\SEMCTR\SEMCTR.c</FilePath>
             </File>
           </Files>
         </Group>

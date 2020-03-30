@@ -8,6 +8,7 @@
 #include "misc.h"
 #include "MODBUS.h"
 #include "GILL.h"
+#include "SEMCTR.h"
 typedef uint32_t  u32;
 typedef uint16_t u16;
 typedef uint8_t  u8;
@@ -20,6 +21,7 @@ typedef union{
 	u8 ch[4];
 	float fl;
 }c4d;
+
 PROTOCOL_STATUS readstatus=NONE;//0:free 1:MODEBUS 2:...
 u8 RS485recbuff[RS485recbufflen];
 u8 RS485recounter=0;
@@ -123,6 +125,14 @@ void USART2_IRQHandler(void)
 			++RS485recounter;
 			return;
 		}
+		if(readstatus==NONE&&res==SEMHEAD)
+		{
+			readstatus=SEMOTOR;
+			RS485recounter=0;
+		  RS485recbuff[RS485recounter]=res;
+			++RS485recounter;
+			return;
+		}
 		switch(readstatus){
 			case NONE:
 				break;
@@ -188,6 +198,29 @@ void USART2_IRQHandler(void)
 				++RS485recounter;
 				}
 				break;
+		 case SEMOTOR:
+			 if(RS485recounter>=(SEMRETURNSIZE-1))
+			 {
+				 RS485recbuff[RS485recounter]=res;
+				 RS485recounter=0;
+				 readstatus=NONE;
+				 if(getcksm(RS485recbuff,SEMRETURNSIZE-1)==RS485recbuff[SEMRETURNSIZE-1])
+         {
+					 if(RS485recbuff[2]==semaddress0){
+						 motor0position=(u16)RS485recbuff[5]+((u16)RS485recbuff[6])<<8;
+						 motor0speed=(u16)RS485recbuff[7]+((u16)RS485recbuff[8])<<8;
+					 }
+					 else if(RS485recbuff[2]==semaddress1){
+						 motor1position=(u16)RS485recbuff[5]+((u16)RS485recbuff[6])<<8;
+						 motor1speed=(u16)RS485recbuff[7]+((u16)RS485recbuff[8])<<8;
+					 }
+				 }
+			 }
+			 else
+       {
+				RS485recbuff[RS485recounter]=res;
+				++RS485recounter;
+			 }
 		}
 			
 	}  											 

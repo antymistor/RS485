@@ -24,6 +24,7 @@ typedef enum
  PELCOp,
  MODBUS,
  GILLFORMAT,
+ SEMOTOR,
 }PROTOCOL_STATUS;
 
 void RS485_modeset(RS485MODE mode);
