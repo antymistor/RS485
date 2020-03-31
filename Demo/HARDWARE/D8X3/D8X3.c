@@ -24,7 +24,12 @@ void D8X3CMD(u16 cmd,u8 data)
 	PELCO_D_PACKET[4]=(u8)((datatemp&0xff00)>>8);
 	PELCO_D_PACKET[5]=(u8)(datatemp&(0x00ff));
 	PELCO_D_PACKET[6]=crc(PELCO_D_PACKET[1],PELCO_D_PACKET[2],PELCO_D_PACKET[3],PELCO_D_PACKET[4],PELCO_D_PACKET[5]);
+	#if D8X3mode==1
+	RS422_senddata(PELCO_D_PACKET,7);
+	#else
 	RS485_senddata(PELCO_D_PACKET,7);
+	#endif
+	
 #endif
 #ifdef PELCOP
 	PELCO_P_PACKET[0]=STX;
@@ -36,7 +41,12 @@ void D8X3CMD(u16 cmd,u8 data)
 	PELCO_P_PACKET[5]=(u8)(datatemp&(0x00ff));
 	PELCO_P_PACKET[6]=ETX;
 	PELCO_P_PACKET[7]=crc(PELCO_D_PACKET[1],PELCO_D_PACKET[2],PELCO_D_PACKET[3],PELCO_D_PACKET[4],PELCO_D_PACKET[5]);
-	RS485_senddata(PELCO_P_PACKET,8);
+	
+	#if D8X3mode==1
+	RS422_senddata(PELCO_D_PACKET,8);
+	#else
+	RS485_senddata(PELCO_D_PACKET,8);
+	#endif
 #endif
 	
 }

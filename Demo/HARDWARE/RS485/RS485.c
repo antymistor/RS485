@@ -9,6 +9,7 @@
 #include "MODBUS.h"
 #include "GILL.h"
 #include "SEMCTR.h"
+#include "Config.h"
 typedef uint32_t  u32;
 typedef uint16_t u16;
 typedef uint8_t  u8;
@@ -17,10 +18,6 @@ typedef uint8_t  u8;
 //RS485_TX:PA2
 //RS485_RX:PA3
 //RS485_RE:PA1
-typedef union{
-	u8 ch[4];
-	float fl;
-}c4d;
 
 PROTOCOL_STATUS readstatus=NONE;//0:free 1:MODEBUS 2:...
 u8 RS485recbuff[RS485recbufflen];

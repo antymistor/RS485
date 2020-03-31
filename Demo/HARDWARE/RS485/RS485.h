@@ -17,15 +17,7 @@ SEND,
 RECEIVE
 }RS485MODE;
 
-typedef enum
-{
- NONE,
- PELCOd,
- PELCOp,
- MODBUS,
- GILLFORMAT,
- SEMOTOR,
-}PROTOCOL_STATUS;
+
 
 void RS485_modeset(RS485MODE mode);
 void RS485_senddata(u8 *buf,u8 len);

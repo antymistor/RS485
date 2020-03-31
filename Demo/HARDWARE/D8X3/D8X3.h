@@ -5,6 +5,7 @@
 #define D8X3_address 0x00
 #define PELCOP 
 //#define PELCOD
+#define D8X3mode 1  //1:RS422  //2:RS485
 
 
 #ifdef PELCOP

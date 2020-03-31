@@ -51,7 +51,7 @@ void uart_init(u32 bound){
 	GPIO_PinAFConfig(GPIOA,GPIO_PinSource12,GPIO_AF_USART6); 
 	
 	
-   GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
+  GPIO_InitStructure.GPIO_Pin = GPIO_Pin_11|GPIO_Pin_12;
 	GPIO_InitStructure.GPIO_Mode = GPIO_Mode_AF;
 	GPIO_InitStructure.GPIO_Speed = GPIO_Speed_50MHz;	
 	GPIO_InitStructure.GPIO_OType = GPIO_OType_PP; 
@@ -64,11 +64,10 @@ void uart_init(u32 bound){
 	USART_InitStructure.USART_Parity = USART_Parity_No;
 	USART_InitStructure.USART_HardwareFlowControl = USART_HardwareFlowControl_None;
 	USART_InitStructure.USART_Mode = USART_Mode_Rx | USART_Mode_Tx;	
-    USART_Init(USART6, &USART_InitStructure); 
+  USART_Init(USART6, &USART_InitStructure); 
 	USART_Cmd(USART6, ENABLE); 
 	
 	
-
 	USART_ITConfig(USART6, USART_IT_RXNE, ENABLE);
   NVIC_InitStructure.NVIC_IRQChannel = USART6_IRQn;
 	NVIC_InitStructure.NVIC_IRQChannelPreemptionPriority=3;
@@ -80,13 +79,13 @@ void uart_init(u32 bound){
 }
 
 
-void USART6_IRQHandler(void)                	
-{
-	u8 Res;
-	if(USART_GetITStatus(USART6, USART_IT_RXNE) != RESET)  
-	{
-		Res =USART_ReceiveData(USART6);
-		
-  } 
+//void USART6_IRQHandler(void)                	
+//{
+//	u8 Res;
+//	if(USART_GetITStatus(USART6, USART_IT_RXNE) != RESET)  
+//	{
+//		Res =USART_ReceiveData(USART6);
+//		
+//  } 
 
-} 
+//} 
