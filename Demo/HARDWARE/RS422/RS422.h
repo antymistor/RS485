@@ -17,8 +17,6 @@ SEND,
 RECEIVE
 }RS422MODE;
 
-
-
 void RS422_modeset(RS422MODE mode);
 void RS422_senddata(u8 *buf,u8 len);
 

@@ -843,6 +843,8 @@ Removing Unused input sections from the image.
     Removing rs422.o(i.RS422_senddata), (72 bytes).
     Removing rs422.o(.bss), (100 bytes).
     Removing rs422.o(.data), (2 bytes).
+    Removing mti.o(.rev16_text), (4 bytes).
+    Removing mti.o(.revsh_text), (4 bytes).
     Removing delay.o(.rev16_text), (4 bytes).
     Removing delay.o(.revsh_text), (4 bytes).
     Removing delay.o(i.delay_ms), (64 bytes).
@@ -1740,7 +1742,7 @@ Removing Unused input sections from the image.
     Removing port.o(i.xPortStartScheduler), (360 bytes).
     Removing port.o(.data), (12 bytes).
 
-934 unused section(s) (total 128873 bytes) removed from the image.
+936 unused section(s) (total 128881 bytes) removed from the image.
 
 ==============================================================================
 
@@ -1751,20 +1753,20 @@ Image Symbol Table
     Symbol Name                              Value     Ov Type        Size  Object(Section)
 
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
-    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry5.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry7b.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry2.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry8b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry9b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10a.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry10b.o ABSOLUTE
+    ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11a.o ABSOLUTE
     ../clib/microlib/init/entry.s            0x00000000   Number         0  entry11b.o ABSOLUTE
-    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpyb.o ABSOLUTE
+    ../clib/microlib/string/memcpy.c         0x00000000   Number         0  memcpya.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memseta.o ABSOLUTE
     ../clib/microlib/string/memset.c         0x00000000   Number         0  memset.o ABSOLUTE
     ../clib/microlib/stubs.s                 0x00000000   Number         0  useno.o ABSOLUTE
@@ -1815,6 +1817,7 @@ Image Symbol Table
     ..\HARDWARE\D8X3\D8X3.c                  0x00000000   Number         0  d8x3.o ABSOLUTE
     ..\HARDWARE\GILL\GILL.c                  0x00000000   Number         0  gill.o ABSOLUTE
     ..\HARDWARE\MODBUS\MODBUS.c              0x00000000   Number         0  modbus.o ABSOLUTE
+    ..\HARDWARE\MTI\MTI.c                    0x00000000   Number         0  mti.o ABSOLUTE
     ..\HARDWARE\RS422\RS422.c                0x00000000   Number         0  rs422.o ABSOLUTE
     ..\HARDWARE\RS485\RS485.c                0x00000000   Number         0  rs485.o ABSOLUTE
     ..\HARDWARE\SEMCTR\SEMCTR.c              0x00000000   Number         0  semctr.o ABSOLUTE
@@ -1859,6 +1862,7 @@ Image Symbol Table
     ..\\HARDWARE\\D8X3\\D8X3.c               0x00000000   Number         0  d8x3.o ABSOLUTE
     ..\\HARDWARE\\GILL\\GILL.c               0x00000000   Number         0  gill.o ABSOLUTE
     ..\\HARDWARE\\MODBUS\\MODBUS.c           0x00000000   Number         0  modbus.o ABSOLUTE
+    ..\\HARDWARE\\MTI\\MTI.c                 0x00000000   Number         0  mti.o ABSOLUTE
     ..\\HARDWARE\\RS422\\RS422.c             0x00000000   Number         0  rs422.o ABSOLUTE
     ..\\HARDWARE\\RS485\\RS485.c             0x00000000   Number         0  rs485.o ABSOLUTE
     ..\\HARDWARE\\SEMCTR\\SEMCTR.c           0x00000000   Number         0  semctr.o ABSOLUTE
@@ -2157,29 +2161,29 @@ Memory Map of the image
 
     Exec Addr    Load Addr    Size         Type   Attr      Idx    E Section Name        Object
 
-    0x08000000   0x08000000   0x000001c8   Data   RO          703    RESET               startup_stm32f410xx.o
-    0x080001c8   0x080001c8   0x00000000   Code   RO         6317  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
-    0x080001c8   0x080001c8   0x00000004   Code   RO         6328    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
-    0x080001cc   0x080001cc   0x00000004   Code   RO         6331    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
-    0x080001d0   0x080001d0   0x00000000   Code   RO         6333    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
-    0x080001d0   0x080001d0   0x00000000   Code   RO         6335    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
-    0x080001d0   0x080001d0   0x00000008   Code   RO         6336    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
-    0x080001d8   0x080001d8   0x00000000   Code   RO         6338    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
-    0x080001d8   0x080001d8   0x00000000   Code   RO         6340    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
-    0x080001d8   0x080001d8   0x00000004   Code   RO         6329    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
-    0x080001dc   0x080001dc   0x000000be   Code   RO         6240    .emb_text           port.o
+    0x08000000   0x08000000   0x000001c8   Data   RO          720    RESET               startup_stm32f410xx.o
+    0x080001c8   0x080001c8   0x00000000   Code   RO         6334  * .ARM.Collect$$$$00000000  mc_w.l(entry.o)
+    0x080001c8   0x080001c8   0x00000004   Code   RO         6345    .ARM.Collect$$$$00000001  mc_w.l(entry2.o)
+    0x080001cc   0x080001cc   0x00000004   Code   RO         6348    .ARM.Collect$$$$00000004  mc_w.l(entry5.o)
+    0x080001d0   0x080001d0   0x00000000   Code   RO         6350    .ARM.Collect$$$$00000008  mc_w.l(entry7b.o)
+    0x080001d0   0x080001d0   0x00000000   Code   RO         6352    .ARM.Collect$$$$0000000A  mc_w.l(entry8b.o)
+    0x080001d0   0x080001d0   0x00000008   Code   RO         6353    .ARM.Collect$$$$0000000B  mc_w.l(entry9a.o)
+    0x080001d8   0x080001d8   0x00000000   Code   RO         6355    .ARM.Collect$$$$0000000D  mc_w.l(entry10a.o)
+    0x080001d8   0x080001d8   0x00000000   Code   RO         6357    .ARM.Collect$$$$0000000F  mc_w.l(entry11a.o)
+    0x080001d8   0x080001d8   0x00000004   Code   RO         6346    .ARM.Collect$$$$00002712  mc_w.l(entry2.o)
+    0x080001dc   0x080001dc   0x000000be   Code   RO         6257    .emb_text           port.o
     0x0800029a   0x0800029a   0x00000002   PAD
-    0x0800029c   0x0800029c   0x00000024   Code   RO          704    .text               startup_stm32f410xx.o
-    0x080002c0   0x080002c0   0x00000024   Code   RO         6342    .text               mc_w.l(init.o)
+    0x0800029c   0x0800029c   0x00000024   Code   RO          721    .text               startup_stm32f410xx.o
+    0x080002c0   0x080002c0   0x00000024   Code   RO         6359    .text               mc_w.l(init.o)
     0x080002e4   0x080002e4   0x00000004   Code   RO          148    i.BusFault_Handler  stm32f4xx_it.o
     0x080002e8   0x080002e8   0x00000078   Code   RO          339    i.CRC16_MODBUS      modbus.o
     0x08000360   0x08000360   0x00000002   Code   RO          149    i.DebugMon_Handler  stm32f4xx_it.o
     0x08000362   0x08000362   0x0000003e   Code   RO          402    i.GILL_crc          gill.o
     0x080003a0   0x080003a0   0x00000018   Code   RO          404    i.GILL_enablepull   gill.o
-    0x080003b8   0x080003b8   0x00000090   Code   RO         2311    i.GPIO_Init         stm32f4xx_gpio.o
-    0x08000448   0x08000448   0x00000046   Code   RO         2312    i.GPIO_PinAFConfig  stm32f4xx_gpio.o
-    0x0800048e   0x0800048e   0x00000004   Code   RO         2318    i.GPIO_ResetBits    stm32f4xx_gpio.o
-    0x08000492   0x08000492   0x00000004   Code   RO         2319    i.GPIO_SetBits      stm32f4xx_gpio.o
+    0x080003b8   0x080003b8   0x00000090   Code   RO         2328    i.GPIO_Init         stm32f4xx_gpio.o
+    0x08000448   0x08000448   0x00000046   Code   RO         2329    i.GPIO_PinAFConfig  stm32f4xx_gpio.o
+    0x0800048e   0x0800048e   0x00000004   Code   RO         2335    i.GPIO_ResetBits    stm32f4xx_gpio.o
+    0x08000492   0x08000492   0x00000004   Code   RO         2336    i.GPIO_SetBits      stm32f4xx_gpio.o
     0x08000496   0x08000496   0x00000004   Code   RO          150    i.HardFault_Handler  stm32f4xx_it.o
     0x0800049a   0x0800049a   0x0000003a   Code   RO          340    i.InvertUint16      modbus.o
     0x080004d4   0x080004d4   0x0000003a   Code   RO          341    i.InvertUint8       modbus.o
@@ -2190,44 +2194,44 @@ Memory Map of the image
     0x080005e4   0x080005e4   0x00000004   Code   RO          151    i.MemManage_Handler  stm32f4xx_it.o
     0x080005e8   0x080005e8   0x00000002   Code   RO          152    i.NMI_Handler       stm32f4xx_it.o
     0x080005ea   0x080005ea   0x00000002   PAD
-    0x080005ec   0x080005ec   0x00000078   Code   RO          710    i.NVIC_Init         misc.o
-    0x08000664   0x08000664   0x00000020   Code   RO         3178    i.RCC_AHB1PeriphClockCmd  stm32f4xx_rcc.o
-    0x08000684   0x08000684   0x00000020   Code   RO         3184    i.RCC_APB1PeriphClockCmd  stm32f4xx_rcc.o
-    0x080006a4   0x080006a4   0x000000e8   Code   RO         3197    i.RCC_GetClocksFreq  stm32f4xx_rcc.o
+    0x080005ec   0x080005ec   0x00000078   Code   RO          727    i.NVIC_Init         misc.o
+    0x08000664   0x08000664   0x00000020   Code   RO         3195    i.RCC_AHB1PeriphClockCmd  stm32f4xx_rcc.o
+    0x08000684   0x08000684   0x00000020   Code   RO         3201    i.RCC_APB1PeriphClockCmd  stm32f4xx_rcc.o
+    0x080006a4   0x080006a4   0x000000e8   Code   RO         3214    i.RCC_GetClocksFreq  stm32f4xx_rcc.o
     0x0800078c   0x0800078c   0x000000ec   Code   RO          264    i.RS485_init        rs485.o
     0x08000878   0x08000878   0x00000024   Code   RO          265    i.RS485_modeset     rs485.o
     0x0800089c   0x0800089c   0x00000048   Code   RO          266    i.RS485_senddata    rs485.o
     0x080008e4   0x080008e4   0x0000009c   Code   RO          227    i.SetSysClock       system_stm32f4xx.o
-    0x08000980   0x08000980   0x00000028   Code   RO          714    i.SysTick_CLKSourceConfig  misc.o
-    0x080009a8   0x080009a8   0x00000010   Code   RO          561    i.SysTick_Handler   delay.o
+    0x08000980   0x08000980   0x00000028   Code   RO          731    i.SysTick_CLKSourceConfig  misc.o
+    0x080009a8   0x080009a8   0x00000010   Code   RO          578    i.SysTick_Handler   delay.o
     0x080009b8   0x080009b8   0x00000068   Code   RO          229    i.SystemInit        system_stm32f4xx.o
     0x08000a20   0x08000a20   0x0000031c   Code   RO          267    i.USART2_IRQHandler  rs485.o
     0x08000d3c   0x08000d3c   0x0000001c   Code   RO          519    i.USART6_IRQHandler  rs422.o
-    0x08000d58   0x08000d58   0x00000012   Code   RO         4909    i.USART_ClearFlag   stm32f4xx_usart.o
-    0x08000d6a   0x08000d6a   0x00000018   Code   RO         4913    i.USART_Cmd         stm32f4xx_usart.o
-    0x08000d82   0x08000d82   0x0000001a   Code   RO         4916    i.USART_GetFlagStatus  stm32f4xx_usart.o
-    0x08000d9c   0x08000d9c   0x00000054   Code   RO         4917    i.USART_GetITStatus  stm32f4xx_usart.o
-    0x08000df0   0x08000df0   0x0000004a   Code   RO         4919    i.USART_ITConfig    stm32f4xx_usart.o
+    0x08000d58   0x08000d58   0x00000012   Code   RO         4926    i.USART_ClearFlag   stm32f4xx_usart.o
+    0x08000d6a   0x08000d6a   0x00000018   Code   RO         4930    i.USART_Cmd         stm32f4xx_usart.o
+    0x08000d82   0x08000d82   0x0000001a   Code   RO         4933    i.USART_GetFlagStatus  stm32f4xx_usart.o
+    0x08000d9c   0x08000d9c   0x00000054   Code   RO         4934    i.USART_GetITStatus  stm32f4xx_usart.o
+    0x08000df0   0x08000df0   0x0000004a   Code   RO         4936    i.USART_ITConfig    stm32f4xx_usart.o
     0x08000e3a   0x08000e3a   0x00000002   PAD
-    0x08000e3c   0x08000e3c   0x000000d4   Code   RO         4920    i.USART_Init        stm32f4xx_usart.o
-    0x08000f10   0x08000f10   0x0000000a   Code   RO         4927    i.USART_ReceiveData  stm32f4xx_usart.o
-    0x08000f1a   0x08000f1a   0x00000008   Code   RO         4930    i.USART_SendData    stm32f4xx_usart.o
+    0x08000e3c   0x08000e3c   0x000000d4   Code   RO         4937    i.USART_Init        stm32f4xx_usart.o
+    0x08000f10   0x08000f10   0x0000000a   Code   RO         4944    i.USART_ReceiveData  stm32f4xx_usart.o
+    0x08000f1a   0x08000f1a   0x00000008   Code   RO         4947    i.USART_SendData    stm32f4xx_usart.o
     0x08000f22   0x08000f22   0x00000004   Code   RO          153    i.UsageFault_Handler  stm32f4xx_it.o
-    0x08000f26   0x08000f26   0x0000000e   Code   RO         6346    i.__scatterload_copy  mc_w.l(handlers.o)
-    0x08000f34   0x08000f34   0x00000002   Code   RO         6347    i.__scatterload_null  mc_w.l(handlers.o)
-    0x08000f36   0x08000f36   0x0000000e   Code   RO         6348    i.__scatterload_zeroinit  mc_w.l(handlers.o)
-    0x08000f44   0x08000f44   0x00000044   Code   RO          562    i.delay_init        delay.o
+    0x08000f26   0x08000f26   0x0000000e   Code   RO         6363    i.__scatterload_copy  mc_w.l(handlers.o)
+    0x08000f34   0x08000f34   0x00000002   Code   RO         6364    i.__scatterload_null  mc_w.l(handlers.o)
+    0x08000f36   0x08000f36   0x0000000e   Code   RO         6365    i.__scatterload_zeroinit  mc_w.l(handlers.o)
+    0x08000f44   0x08000f44   0x00000044   Code   RO          579    i.delay_init        delay.o
     0x08000f88   0x08000f88   0x0000001c   Code   RO          454    i.getcksm           semctr.o
     0x08000fa4   0x08000fa4   0x0000001a   Code   RO            3    i.main              main.o
     0x08000fbe   0x08000fbe   0x00000002   PAD
-    0x08000fc0   0x08000fc0   0x00000034   Code   RO         5699    i.prvResetNextTaskUnblockTime  tasks.o
-    0x08000ff4   0x08000ff4   0x00000028   Code   RO         5274    i.uxListRemove      list.o
-    0x0800101c   0x0800101c   0x00000018   Code   RO         5278    i.vListInsertEnd    list.o
-    0x08001034   0x08001034   0x0000008c   Code   RO         5730    i.vTaskSwitchContext  tasks.o
-    0x080010c0   0x080010c0   0x00000034   Code   RO         6249    i.xPortSysTickHandler  port.o
-    0x080010f4   0x080010f4   0x00000020   Code   RO         5736    i.xTaskGetSchedulerState  tasks.o
-    0x08001114   0x08001114   0x00000148   Code   RO         5739    i.xTaskIncrementTick  tasks.o
-    0x0800125c   0x0800125c   0x00000020   Data   RO         6344    Region$$Table       anon$$obj.o
+    0x08000fc0   0x08000fc0   0x00000034   Code   RO         5716    i.prvResetNextTaskUnblockTime  tasks.o
+    0x08000ff4   0x08000ff4   0x00000028   Code   RO         5291    i.uxListRemove      list.o
+    0x0800101c   0x0800101c   0x00000018   Code   RO         5295    i.vListInsertEnd    list.o
+    0x08001034   0x08001034   0x0000008c   Code   RO         5747    i.vTaskSwitchContext  tasks.o
+    0x080010c0   0x080010c0   0x00000034   Code   RO         6266    i.xPortSysTickHandler  port.o
+    0x080010f4   0x080010f4   0x00000020   Code   RO         5753    i.xTaskGetSchedulerState  tasks.o
+    0x08001114   0x08001114   0x00000148   Code   RO         5756    i.xTaskIncrementTick  tasks.o
+    0x0800125c   0x0800125c   0x00000020   Data   RO         6361    Region$$Table       anon$$obj.o
 
 
     Execution Region RW_IRAM1 (Exec base: 0x20000000, Load base: 0x0800127c, Size: 0x000005c0, Max: 0x00008000, ABSOLUTE)
@@ -2238,14 +2242,14 @@ Memory Map of the image
     0x20000010   0x0800128c   0x00000010   Data   RW          347    .data               modbus.o
     0x20000020   0x0800129c   0x00000008   Data   RW          407    .data               gill.o
     0x20000028   0x080012a4   0x00000008   Data   RW          456    .data               semctr.o
-    0x20000030   0x080012ac   0x00000004   Data   RW          566    .data               delay.o
-    0x20000034   0x080012b0   0x00000010   Data   RW         3228    .data               stm32f4xx_rcc.o
-    0x20000044   0x080012c0   0x0000003c   Data   RW         5748    .data               tasks.o
+    0x20000030   0x080012ac   0x00000004   Data   RW          583    .data               delay.o
+    0x20000034   0x080012b0   0x00000010   Data   RW         3245    .data               stm32f4xx_rcc.o
+    0x20000044   0x080012c0   0x0000003c   Data   RW         5765    .data               tasks.o
     0x20000080        -       0x00000064   Zero   RW          268    .bss                rs485.o
     0x200000e4        -       0x0000000a   Zero   RW          346    .bss                modbus.o
     0x200000ee        -       0x0000000a   Zero   RW          406    .bss                gill.o
-    0x200000f8        -       0x000000c8   Zero   RW         5747    .bss                tasks.o
-    0x200001c0        -       0x00000400   Zero   RW          701    STACK               startup_stm32f410xx.o
+    0x200000f8        -       0x000000c8   Zero   RW         5764    .bss                tasks.o
+    0x200001c0        -       0x00000400   Zero   RW          718    STACK               startup_stm32f410xx.o
 
 
 ==============================================================================

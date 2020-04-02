@@ -8,6 +8,7 @@
 "..\obj\gill.o"
 "..\obj\semctr.o"
 "..\obj\rs422.o"
+"..\obj\mti.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"
