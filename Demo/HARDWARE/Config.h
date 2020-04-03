@@ -9,6 +9,7 @@ typedef enum
  MODBUS,
  GILLFORMAT,
  SEMOTOR,
+ MTI,
 }PROTOCOL_STATUS;
 typedef union{
 	u8 ch[4];

@@ -1,5 +1,5 @@
 Dependencies for Project 'LED', Target 'LED': (DO NOT MODIFY !)
-F (.\main.c)(0x5E7C46B7)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
+F (.\main.c)(0x5E86C59F)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\main.o --omf_browse ..\obj\main.crf --depend ..\obj\main.d)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
 I (..\USER\stm32f4xx.h)(0x582097AC)
 I (..\CORE\core_cm4.h)(0x5710F356)
@@ -38,7 +38,9 @@ I (D:\MYAPP\ARM\ARMCC\include\stdio.h)(0x588B8344)
 I (..\HARDWARE\RS485\RS485.h)(0x5E82E9BD)
 I (..\HARDWARE\MODBUS\MODBUS.h)(0x5E7C57B7)
 I (..\HARDWARE\GILL\GILL.h)(0x5E7C323F)
-I (..\HARDWARE\Config.h)(0x5E82EAA2)
+I (..\HARDWARE\SEMCTR\SEMCTR.h)(0x5E81BB99)
+I (..\HARDWARE\MTI\MTI.h)(0x5E86D8E2)
+I (..\HARDWARE\Config.h)(0x5E86C5F7)
 F (.\stm32f4xx_it.c)(0x5C712913)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\stm32f4xx_it.o --omf_browse ..\obj\stm32f4xx_it.crf --depend ..\obj\stm32f4xx_it.d)
 I (stm32f4xx_it.h)(0x58221744)
 I (stm32f4xx.h)(0x582097AC)
@@ -107,7 +109,7 @@ I (..\FWLIB\inc\stm32f4xx_rng.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_fmpi2c.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_lptim.h)(0x581CC67C)
-F (..\HARDWARE\RS485\RS485.c)(0x5E82EAB0)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\rs485.o --omf_browse ..\obj\rs485.crf --depend ..\obj\rs485.d)
+F (..\HARDWARE\RS485\RS485.c)(0x5E86D8E2)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\rs485.o --omf_browse ..\obj\rs485.crf --depend ..\obj\rs485.d)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
 I (..\USER\stm32f4xx.h)(0x582097AC)
 I (..\CORE\core_cm4.h)(0x5710F356)
@@ -145,7 +147,8 @@ I (..\SYSTEM\delay\delay.h)(0x5C713149)
 I (..\HARDWARE\MODBUS\MODBUS.h)(0x5E7C57B7)
 I (..\HARDWARE\GILL\GILL.h)(0x5E7C323F)
 I (..\HARDWARE\SEMCTR\SEMCTR.h)(0x5E81BB99)
-I (..\HARDWARE\Config.h)(0x5E82EAA2)
+I (..\HARDWARE\MTI\MTI.h)(0x5E86D8E2)
+I (..\HARDWARE\Config.h)(0x5E86C5F7)
 F (..\HARDWARE\D8X3\D8X3.c)(0x5E82EC0C)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\d8x3.o --omf_browse ..\obj\d8x3.crf --depend ..\obj\d8x3.d)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
 I (..\USER\stm32f4xx.h)(0x582097AC)
@@ -218,7 +221,7 @@ I (..\FWLIB\inc\stm32f4xx_lptim.h)(0x581CC67C)
 I (..\HARDWARE\MODBUS\MODBUS.h)(0x5E7C57B7)
 I (..\SYSTEM\delay\delay.h)(0x5C713149)
 I (..\HARDWARE\RS485\RS485.h)(0x5E82E9BD)
-I (..\HARDWARE\Config.h)(0x5E82EAA2)
+I (..\HARDWARE\Config.h)(0x5E86C5F7)
 F (..\HARDWARE\GILL\GILL.c)(0x5E7C323F)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\gill.o --omf_browse ..\obj\gill.crf --depend ..\obj\gill.d)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
 I (..\USER\stm32f4xx.h)(0x582097AC)
@@ -255,7 +258,7 @@ I (..\FWLIB\inc\stm32f4xx_lptim.h)(0x581CC67C)
 I (..\HARDWARE\GILL\GILL.h)(0x5E7C323F)
 I (..\SYSTEM\delay\delay.h)(0x5C713149)
 I (..\HARDWARE\RS485\RS485.h)(0x5E82E9BD)
-I (..\HARDWARE\Config.h)(0x5E82EAA2)
+I (..\HARDWARE\Config.h)(0x5E86C5F7)
 F (..\HARDWARE\SEMCTR\SEMCTR.c)(0x5E81BC2B)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\semctr.o --omf_browse ..\obj\semctr.crf --depend ..\obj\semctr.d)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
 I (..\USER\stm32f4xx.h)(0x582097AC)
@@ -330,8 +333,8 @@ I (..\SYSTEM\delay\delay.h)(0x5C713149)
 I (..\HARDWARE\MODBUS\MODBUS.h)(0x5E7C57B7)
 I (..\HARDWARE\GILL\GILL.h)(0x5E7C323F)
 I (..\HARDWARE\SEMCTR\SEMCTR.h)(0x5E81BB99)
-I (..\HARDWARE\Config.h)(0x5E82EAA2)
-F (..\HARDWARE\MTI\MTI.c)(0x5E854BC2)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\mti.o --omf_browse ..\obj\mti.crf --depend ..\obj\mti.d)
+I (..\HARDWARE\Config.h)(0x5E86C5F7)
+F (..\HARDWARE\MTI\MTI.c)(0x5E86CDE3)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\mti.o --omf_browse ..\obj\mti.crf --depend ..\obj\mti.d)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
 I (..\USER\stm32f4xx.h)(0x582097AC)
 I (..\CORE\core_cm4.h)(0x5710F356)
@@ -364,10 +367,10 @@ I (..\FWLIB\inc\stm32f4xx_rng.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_fmpi2c.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_lptim.h)(0x581CC67C)
-I (..\HARDWARE\MTI\MTI.h)(0x5E854BC2)
+I (..\HARDWARE\MTI\MTI.h)(0x5E86D8E2)
 I (..\SYSTEM\delay\delay.h)(0x5C713149)
 I (..\HARDWARE\RS485\RS485.h)(0x5E82E9BD)
-I (..\HARDWARE\Config.h)(0x5E82EAA2)
+I (..\HARDWARE\Config.h)(0x5E86C5F7)
 F (..\SYSTEM\delay\delay.c)(0x5C713113)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\delay.o --omf_browse ..\obj\delay.crf --depend ..\obj\delay.d)
 I (..\SYSTEM\delay\delay.h)(0x5C713149)
 I (..\SYSTEM\sys\sys.h)(0x5C713113)
@@ -1591,7 +1594,7 @@ I (..\FWLIB\inc\stm32f4xx_rng.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_dac.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_fmpi2c.h)(0x581CC67C)
 I (..\FWLIB\inc\stm32f4xx_lptim.h)(0x581CC67C)
-F (..\readme.txt)(0x5E81BD8A)()
+F (..\readme.txt)(0x5E854C25)()
 F (..\DSP_LIB\arm_cortexM4lf_math.lib)(0x5710F3FA)()
 F (..\FreeRTOS\croutine.c)(0x5B92F2CA)(-c --cpu Cortex-M4.fp -D__EVAL -D__MICROLIB -g -O0 --apcs=interwork --split_sections -I ..\CORE -I ..\SYSTEM\delay -I ..\SYSTEM\sys -I ..\SYSTEM\usart -I ..\USER -I ..\FWLIB\inc -I ..\DSP_LIB -I ..\DSP_LIB\Include -I ..\FreeRTOS\include -I ..\FreeRTOS\portable\RVDS\ARM_CM4F -I ..\HARDWARE\RS485 -I ..\HARDWARE -I ..\HARDWARE\D8X3 -I ..\HARDWARE\MODBUS -I ..\HARDWARE\GILL -I ..\HARDWARE\SEMCTR -I ..\HARDWARE\RS422 -I ..\HARDWARE\MTI-I.\RTE\_LED-ID:\MYAPP\ARM\PACK\Keil\STM32F4xx_DFP\2.13.0\Drivers\CMSIS\Device\ST\STM32F4xx\Include-ID:\MYAPP\ARM\CMSIS\Include-D__UVISION_VERSION="524" -DSTM32F410Cx -DSTM32F410xx -DUSE_STDPERIPH_DRIVER -DARM_MATH_CM4 -D__CC_ARM -DARM_MATH_MATRIX_CHECK -DARM_MATH_ROUNDING --C99-o ..\obj\croutine.o --omf_browse ..\obj\croutine.crf --depend ..\obj\croutine.d)
 I (..\FreeRTOS\include\FreeRTOS.h)(0x5B92F2C8)

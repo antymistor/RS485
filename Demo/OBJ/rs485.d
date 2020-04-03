@@ -37,4 +37,5 @@
 ..\obj\rs485.o: ..\HARDWARE\MODBUS\MODBUS.h
 ..\obj\rs485.o: ..\HARDWARE\GILL\GILL.h
 ..\obj\rs485.o: ..\HARDWARE\SEMCTR\SEMCTR.h
+..\obj\rs485.o: ..\HARDWARE\MTI\MTI.h
 ..\obj\rs485.o: ..\HARDWARE\Config.h

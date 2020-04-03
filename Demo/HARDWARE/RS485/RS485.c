@@ -9,6 +9,7 @@
 #include "MODBUS.h"
 #include "GILL.h"
 #include "SEMCTR.h"
+#include "MTI.h"
 #include "Config.h"
 typedef uint32_t  u32;
 typedef uint16_t u16;
@@ -23,7 +24,7 @@ PROTOCOL_STATUS readstatus=NONE;//0:free 1:MODEBUS 2:...
 u8 RS485recbuff[RS485recbufflen];
 u8 RS485recounter=0;
 c4d tempunion;
-
+u8  tempu8=0;
 u16 tempu16=0;
 u32 tempu32=0;
 void RS485_init(u32 bound){
@@ -130,6 +131,14 @@ void USART2_IRQHandler(void)
 			++RS485recounter;
 			return;
 		}
+		if(readstatus==NONE&&res==Preamble)
+		{
+			readstatus=MTI;
+			RS485recounter=0;
+		  RS485recbuff[RS485recounter]=res;
+			++RS485recounter;
+			return;
+		}
 		switch(readstatus){
 			case NONE:
 				break;
@@ -213,17 +222,65 @@ void USART2_IRQHandler(void)
 					 }
 				 }
 			 }
-			 else
-       {
-				RS485recbuff[RS485recounter]=res;
+			 else{
+			 RS485recbuff[RS485recounter]=res;
 				++RS485recounter;
 			 }
-		}
+			 break;
+		 case MTI:
+			 if(RS485recounter>=(MTIreturnsize-1))
+			 {
+				 RS485recbuff[RS485recounter]=res;
+				 RS485recounter=0;
+				 readstatus=NONE;
+				 if(get_mti_checksum(RS485recbuff,MTIreturnsize-1)==RS485recbuff[MTIreturnsize-1])
+				 {
+					 for(tempu8=0;tempu8<4;tempu8++){
+				    tempunion.ch[0]=RS485recbuff[10+tempu8*4];
+					  tempunion.ch[1]=RS485recbuff[9+tempu8*4];
+					  tempunion.ch[2]=RS485recbuff[8+tempu8*4];
+					  tempunion.ch[3]=RS485recbuff[7+tempu8*4];
+					  quaternion[tempu8]=tempunion.fl;
+					 }
+					 for(tempu8=0;tempu8<3;tempu8++){
+				    tempunion.ch[0]=RS485recbuff[29+tempu8*4];
+					  tempunion.ch[1]=RS485recbuff[28+tempu8*4];
+					  tempunion.ch[2]=RS485recbuff[27+tempu8*4];
+					  tempunion.ch[3]=RS485recbuff[26+tempu8*4];
+					  acceleration[tempu8]=tempunion.fl;
+					 }
+					  for(tempu8=0;tempu8<3;tempu8++){
+				    tempunion.ch[0]=RS485recbuff[44+tempu8*4];
+					  tempunion.ch[1]=RS485recbuff[43+tempu8*4];
+					  tempunion.ch[2]=RS485recbuff[41+tempu8*4];
+					  tempunion.ch[3]=RS485recbuff[41+tempu8*4];
+					  rateofturn[tempu8]=tempunion.fl;
+					 }
+					  for(tempu8=0;tempu8<3;tempu8++){
+				    tempunion.ch[0]=RS485recbuff[59+tempu8*4];
+					  tempunion.ch[1]=RS485recbuff[58+tempu8*4];
+					  tempunion.ch[2]=RS485recbuff[57+tempu8*4];
+					  tempunion.ch[3]=RS485recbuff[56+tempu8*4];
+					  magneticfield[tempu8]=tempunion.fl;
+					 }
+				 }
+			 }
+			 else
+			 {
+				 RS485recbuff[RS485recounter]=res;
+				++RS485recounter;
+			  if(RS485recounter==4&&RS485recbuff[3]!=MTData2)
+				{
+					readstatus=NONE;
+					RS485recounter=0;
+				}
+			 }
+			 break;
+		 default:
+			 break;
 			
-	}  											 
-} 
-
- 
-
-
+			 }
+	}
+			
+}  											 
 

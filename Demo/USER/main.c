@@ -4,6 +4,9 @@
 #include "RS485.h"
 #include "MODBUS.h"
 #include "GILL.h"
+#include "SEMCTR.h"
+#include "MTI.h"
+
 #include "Config.h"
 int main(void)
 { 
@@ -11,6 +14,8 @@ int main(void)
 	RS485_init( RS485BaudRate);
 	MODBUS_init();
 	GILL_enablepull();
+	SEM_pidinit();
+	MTI_init();
 	//clock_init();
 	while(1)
 	{
