@@ -33,8 +33,8 @@
 ..\obj\rs422.o: ..\FWLIB\inc\stm32f4xx_fmpi2c.h
 ..\obj\rs422.o: ..\FWLIB\inc\stm32f4xx_lptim.h
 ..\obj\rs422.o: ..\HARDWARE\RS422\RS422.h
+..\obj\rs422.o: ..\HARDWARE\Config.h
 ..\obj\rs422.o: ..\SYSTEM\delay\delay.h
 ..\obj\rs422.o: ..\HARDWARE\MODBUS\MODBUS.h
 ..\obj\rs422.o: ..\HARDWARE\GILL\GILL.h
 ..\obj\rs422.o: ..\HARDWARE\SEMCTR\SEMCTR.h
-..\obj\rs422.o: ..\HARDWARE\Config.h

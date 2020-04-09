@@ -3,7 +3,7 @@
 <title>Static Call Graph - [..\OBJ\LED.axf]</title></head>
 <body><HR>
 <H1>Static Call Graph for image ..\OBJ\LED.axf</H1><HR>
-<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Fri Apr 03 14:34:15 2020
+<BR><P>#&#060CALLGRAPH&#062# ARM Linker, 5060528: Last Updated: Thu Apr 09 16:12:58 2020
 <BR><P>
 <H3>Maximum Stack Usage =        108 bytes + Unknown(Cycles, Untraceable Function Pointers)</H3><H3>
 Call chain for Maximum Stack Depth:</H3>
@@ -75,7 +75,7 @@ Function Pointers
  <LI><a href="#[1f]">TIM1_UP_IRQHandler</a> from startup_stm32f410xx.o(.text) referenced from startup_stm32f410xx.o(RESET)
  <LI><a href="#[2d]">TIM5_IRQHandler</a> from startup_stm32f410xx.o(.text) referenced from startup_stm32f410xx.o(RESET)
  <LI><a href="#[2e]">TIM6_DAC_IRQHandler</a> from startup_stm32f410xx.o(.text) referenced from startup_stm32f410xx.o(RESET)
- <LI><a href="#[28]">USART1_IRQHandler</a> from startup_stm32f410xx.o(.text) referenced from startup_stm32f410xx.o(RESET)
+ <LI><a href="#[28]">USART1_IRQHandler</a> from rs232.o(i.USART1_IRQHandler) referenced from startup_stm32f410xx.o(RESET)
  <LI><a href="#[29]">USART2_IRQHandler</a> from rs485.o(i.USART2_IRQHandler) referenced from startup_stm32f410xx.o(RESET)
  <LI><a href="#[37]">USART6_IRQHandler</a> from rs422.o(i.USART6_IRQHandler) referenced from startup_stm32f410xx.o(RESET)
  <LI><a href="#[5]">UsageFault_Handler</a> from stm32f4xx_it.o(i.UsageFault_Handler) referenced from startup_stm32f410xx.o(RESET)
@@ -273,9 +273,6 @@ Global Symbols
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f410xx.o(RESET)
 </UL>
 <P><STRONG><a name="[2e]"></a>TIM6_DAC_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f410xx.o(.text))
-<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f410xx.o(RESET)
-</UL>
-<P><STRONG><a name="[28]"></a>USART1_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f410xx.o(.text))
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f410xx.o(RESET)
 </UL>
 <P><STRONG><a name="[a]"></a>WWDG_IRQHandler</STRONG> (Thumb, 0 bytes, Stack size 0 bytes, startup_stm32f410xx.o(.text))
@@ -543,6 +540,14 @@ Global Symbols
 </UL>
 <BR>[Address Reference Count : 1]<UL><LI> startup_stm32f410xx.o(.text)
 </UL>
+<P><STRONG><a name="[28]"></a>USART1_IRQHandler</STRONG> (Thumb, 24 bytes, Stack size 8 bytes, rs232.o(i.USART1_IRQHandler))
+<BR><BR>[Stack]<UL><LI>Max Depth = 24<LI>Call Chain = USART1_IRQHandler &rArr; USART_GetITStatus
+</UL>
+<BR>[Calls]<UL><LI><a href="#[6a]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_ReceiveData
+<LI><a href="#[69]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART_GetITStatus
+</UL>
+<BR>[Address Reference Count : 1]<UL><LI> startup_stm32f410xx.o(RESET)
+</UL>
 <P><STRONG><a name="[29]"></a>USART2_IRQHandler</STRONG> (Thumb, 1424 bytes, Stack size 8 bytes, rs485.o(i.USART2_IRQHandler))
 <BR><BR>[Stack]<UL><LI>Max Depth = 52<LI>Call Chain = USART2_IRQHandler &rArr; CRC16_MODBUS &rArr; InvertUint16
 </UL>
@@ -578,7 +583,8 @@ Global Symbols
 <P><STRONG><a name="[69]"></a>USART_GetITStatus</STRONG> (Thumb, 84 bytes, Stack size 16 bytes, stm32f4xx_usart.o(i.USART_GetITStatus))
 <BR><BR>[Stack]<UL><LI>Max Depth = 16<LI>Call Chain = USART_GetITStatus
 </UL>
-<BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART6_IRQHandler
+<BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART6_IRQHandler
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
 </UL>
 
@@ -597,7 +603,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[6a]"></a>USART_ReceiveData</STRONG> (Thumb, 10 bytes, Stack size 0 bytes, stm32f4xx_usart.o(i.USART_ReceiveData))
-<BR><BR>[Called By]<UL><LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART6_IRQHandler
+<BR><BR>[Called By]<UL><LI><a href="#[28]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART1_IRQHandler
+<LI><a href="#[37]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART6_IRQHandler
 <LI><a href="#[29]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;USART2_IRQHandler
 </UL>
 
@@ -721,8 +728,8 @@ Global Symbols
 </UL>
 
 <P><STRONG><a name="[66]"></a>xTaskGetSchedulerState</STRONG> (Thumb, 24 bytes, Stack size 0 bytes, tasks.o(i.xTaskGetSchedulerState))
-<BR><BR>[Called By]<UL><LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
-<LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<BR><BR>[Called By]<UL><LI><a href="#[4f]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;delay_ms
+<LI><a href="#[9]">&gt;&gt;</a>&nbsp;&nbsp;&nbsp;SysTick_Handler
 </UL>
 
 <P><STRONG><a name="[77]"></a>xTaskIncrementTick</STRONG> (Thumb, 282 bytes, Stack size 24 bytes, tasks.o(i.xTaskIncrementTick))

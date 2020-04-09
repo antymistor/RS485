@@ -45,6 +45,7 @@ void RS485_init(u32 bound){
 	GPIO_InitStructure.GPIO_PuPd = GPIO_PuPd_UP; 
 	GPIO_Init(RS485_TX_PORT,&GPIO_InitStructure); 
 	GPIO_InitStructure.GPIO_Pin = RS485_RX;
+	
 	GPIO_Init(RS485_RX_PORT,&GPIO_InitStructure);
 	
   GPIO_InitStructure.GPIO_Pin = RS485_RE; 
@@ -78,7 +79,7 @@ void RS485_init(u32 bound){
 	
 }
 
-void RS485_modeset(RS485MODE mode){
+void RS485_modeset(RSMODE mode){
 	if(mode==RECEIVE){
 		GPIO_ResetBits(RS485_RE_PORT,RS485_RE);
 	}

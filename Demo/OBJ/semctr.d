@@ -35,3 +35,4 @@
 ..\obj\semctr.o: ..\HARDWARE\SEMCTR\SEMCTR.h
 ..\obj\semctr.o: ..\SYSTEM\delay\delay.h
 ..\obj\semctr.o: ..\HARDWARE\RS485\RS485.h
+..\obj\semctr.o: ..\HARDWARE\Config.h

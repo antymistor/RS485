@@ -1,7 +1,7 @@
 #ifndef __RS485_H
 #define __RS485_H
 #include "sys.h"
-
+#include "Config.h"
 void RS485_init(u32 bound);
 #define RS485_TX		GPIO_Pin_2	//定义RS485的TX引脚	 
 #define RS485_TX_PORT	GPIOA	
@@ -11,15 +11,9 @@ void RS485_init(u32 bound);
 #define RS485_RE_PORT	GPIOA
 
 #define RS485recbufflen 100
-typedef enum
-{
-SEND,
-RECEIVE
-}RS485MODE;
 
 
-
-void RS485_modeset(RS485MODE mode);
+void RS485_modeset(RSMODE mode);
 void RS485_senddata(u8 *buf,u8 len);
 
 #endif

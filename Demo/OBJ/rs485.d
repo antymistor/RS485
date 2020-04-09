@@ -33,9 +33,9 @@
 ..\obj\rs485.o: ..\FWLIB\inc\stm32f4xx_fmpi2c.h
 ..\obj\rs485.o: ..\FWLIB\inc\stm32f4xx_lptim.h
 ..\obj\rs485.o: ..\HARDWARE\RS485\RS485.h
+..\obj\rs485.o: ..\HARDWARE\Config.h
 ..\obj\rs485.o: ..\SYSTEM\delay\delay.h
 ..\obj\rs485.o: ..\HARDWARE\MODBUS\MODBUS.h
 ..\obj\rs485.o: ..\HARDWARE\GILL\GILL.h
 ..\obj\rs485.o: ..\HARDWARE\SEMCTR\SEMCTR.h
 ..\obj\rs485.o: ..\HARDWARE\MTI\MTI.h
-..\obj\rs485.o: ..\HARDWARE\Config.h

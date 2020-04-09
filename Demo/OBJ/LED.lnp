@@ -9,6 +9,8 @@
 "..\obj\semctr.o"
 "..\obj\rs422.o"
 "..\obj\mti.o"
+"..\obj\rs232.o"
+"..\obj\ap1.o"
 "..\obj\delay.o"
 "..\obj\sys.o"
 "..\obj\usart.o"

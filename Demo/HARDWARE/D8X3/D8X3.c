@@ -2,6 +2,7 @@
 #include "D8X3.h"	
 #include "delay.h"
 #include "RS485.h"
+#include "RS422.h"
 #include "misc.h"
 typedef uint32_t  u32;
 typedef uint16_t u16;

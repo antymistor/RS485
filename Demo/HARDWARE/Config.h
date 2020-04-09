@@ -16,9 +16,14 @@ typedef union{
 	float fl;
 }c4d;
 
-
+typedef enum
+{
+SEND,
+RECEIVE
+}RSMODE;
 
 #define RS485BaudRate  9600
 #define RS422BaudRate  9600
+#define RS232BaudRate  115200
 
 #endif

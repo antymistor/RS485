@@ -77,7 +77,7 @@ void RS422_init(u32 bound){
 	
 }
 
-void RS422_modeset(RS422MODE mode){
+void RS422_modeset(RSMODE mode){
 	if(mode==RECEIVE){
 		GPIO_ResetBits(RS422_RE_PORT,RS422_RE);
 	}

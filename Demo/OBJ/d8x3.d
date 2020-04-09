@@ -35,3 +35,5 @@
 ..\obj\d8x3.o: ..\HARDWARE\D8X3\D8X3.h
 ..\obj\d8x3.o: ..\SYSTEM\delay\delay.h
 ..\obj\d8x3.o: ..\HARDWARE\RS485\RS485.h
+..\obj\d8x3.o: ..\HARDWARE\Config.h
+..\obj\d8x3.o: ..\HARDWARE\RS422\RS422.h
