@@ -10,6 +10,8 @@ typedef uint8_t  u8;
 u8 AP1_PACKET[20];
 
 u8 sequencecounter=0x01;
+AP1Car ap1={0,0,50,true,true,Error_None};
+
 
 void AP1_reset(void)
 {

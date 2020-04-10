@@ -33,6 +33,7 @@
 ..\obj\ap1.o: ..\FWLIB\inc\stm32f4xx_fmpi2c.h
 ..\obj\ap1.o: ..\FWLIB\inc\stm32f4xx_lptim.h
 ..\obj\ap1.o: ..\HARDWARE\AP1\AP1.h
+..\obj\ap1.o: D:\MYAPP\ARM\ARMCC\Bin\..\include\stdbool.h
 ..\obj\ap1.o: ..\SYSTEM\delay\delay.h
 ..\obj\ap1.o: ..\HARDWARE\RS232\RS232.h
 ..\obj\ap1.o: ..\HARDWARE\Config.h

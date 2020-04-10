@@ -35,3 +35,5 @@
 ..\obj\rs232.o: ..\HARDWARE\RS232\RS232.h
 ..\obj\rs232.o: ..\HARDWARE\Config.h
 ..\obj\rs232.o: ..\SYSTEM\delay\delay.h
+..\obj\rs232.o: ..\HARDWARE\AP1\AP1.h
+..\obj\rs232.o: D:\MYAPP\ARM\ARMCC\Bin\..\include\stdbool.h

@@ -10,6 +10,7 @@ typedef enum
  GILLFORMAT,
  SEMOTOR,
  MTI,
+ AP1,
 }PROTOCOL_STATUS;
 typedef union{
 	u8 ch[4];

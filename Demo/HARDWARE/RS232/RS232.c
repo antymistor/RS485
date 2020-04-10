@@ -6,7 +6,7 @@
 #include "stm32f4xx_rcc.h"
 #include "stm32f4xx_usart.h"
 #include "misc.h"
-
+#include "AP1.h"
 #include "Config.h"
 typedef uint32_t  u32;
 typedef uint16_t u16;
@@ -22,7 +22,7 @@ PROTOCOL_STATUS readstatus232=NONE;//0:free 1:MODEBUS 2:...
 
 u8 RS232recbuff[RS232recbufflen];
 u8 RS232recounter=0;
-
+u8 RS232full=100;
 
 void RS232_init(u32 bound){
   GPIO_InitTypeDef GPIO_InitStructure;
@@ -104,8 +104,64 @@ void USART1_IRQHandler(void)
 	if(USART_GetITStatus(USART1, USART_IT_RXNE) != RESET)
 	{	 	
 	  res =USART_ReceiveData(USART1);
-		//
+	 if(readstatus232==NONE&&res==(u8)(AP1Head1))
+		{
+			readstatus232=AP1;
+			RS232recounter=0;
+			RS232recbuff[RS232recounter]=res;
+			++RS232recounter;
+			return;
+		}
+		switch(readstatus232)
+		{
+			case AP1:
+				if(RS232recounter==AP1lenposition)
+				{
+				  RS232recbuff[RS232recounter]=res;
+				  ++RS232recounter;
+				  RS232full=res+5;
+				}
+				else if(RS232recounter==RS232full-1)
+				{
+					RS232recbuff[RS232recounter]=res;
+					RS232recounter=0;
+				  readstatus232=NONE;
+					RS232full=100;
+					switch(RS232recbuff[4])
+					{
+						case AP1Setspeed:
+							ap1.L_encoder=((u16)RS232recbuff[5])<<8+(u16)RS232recbuff[6];
+						  ap1.R_encoder=((u16)RS232recbuff[7])<<8+(u16)RS232recbuff[8];
+							break;
+						case AP1Getbat:
+							ap1.Power=RS232recbuff[5];
+							break;
+						case AP1Reset:
+							ap1.resetstate=(bool)RS232recbuff[5];
+							break;
+						case AP1Clearencoder:
+							ap1.clearstate=(bool)RS232recbuff[5];
+							break;
+						case AP1Error:
+							ap1.errorstate=(AP1errorstate) RS232recbuff[5];
+								
+							break;
+						default:
+							break;
+					}
+					
+				}
+				else{
+				RS232recbuff[RS232recounter]=res;
+				++RS232recounter;
+				}
+				
+				break;
+			default:
+				break;
+		}
 	}
+	
 } 
 
  

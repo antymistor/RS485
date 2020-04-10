@@ -1,7 +1,7 @@
 #ifndef __AP1_H
 #define __AP1_H
 #include "sys.h"
-
+#include "stdbool.h"
 //Construction
 //Head+Length+Sequence+Payload+checksum
 
@@ -13,6 +13,37 @@
 #define AP1Clearencoder 0x06
 #define AP1Error        0xff
 
+//error code
+
+
+//Mechanical para
+#define PI 3.1415936f
+#define wheel_radius 0.125f   //Unit:m
+#define encoder_resolution 1600 
+#define PID_RATE 50        //Unit:Hz
+
+//User define
+#define AP1lenposition 2
+typedef enum
+{
+  Error_None,
+	out_of_power,
+	over_current,
+	uart_breakdown,
+	wheel_stuck,
+}AP1errorstate;
+
+typedef struct
+{
+	u16 L_encoder;
+	u16 R_encoder;
+	u8 Power;
+	bool resetstate;
+	bool clearstate;
+	AP1errorstate errorstate;
+}AP1Car;
+
+extern AP1Car ap1;
 void AP1_reset(void);
 void AP1_clearencoder(void);
 void AP1_getbat(void);
